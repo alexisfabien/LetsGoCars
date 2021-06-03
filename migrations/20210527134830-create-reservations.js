@@ -2,26 +2,26 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('reservations', {
-      reservation: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      voiture: {
+      id_voiture: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: 'voitures',
-          key: 'voiture'
+          key: 'id'
         }
       },
-      utilisateur: {
+      id_utilisateur: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
           model: 'utilisateurs',
-          key: 'utilisateur'
+          key: 'id'
         }
       },
       dateDepart: {
